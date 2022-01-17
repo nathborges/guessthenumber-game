@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
 
+import Colors from '../constants/colors';
+import DefaultStyles from '../constants/default-styles';
+
 import Card from '../components/Card';
-import Colors from '../constants/Colors';
 import Input from '../components/Input';
 import NumberContainer from '../components/NumberContainer';
 
@@ -49,9 +51,9 @@ const StartGameScreen = props => {
             Keyboard.dismiss();
             }}>
             <View style={styles.screen}>
-                <Text style={styles.title}>Start a new game</Text>
+                <Text style={{...styles.title, ...DefaultStyles.bodyText}}>Start a new game</Text>
                 <Card style={styles.inputContainer}>
-                    <Text>Select a number</Text>
+                    <Text style={DefaultStyles.bodyText}>Select a number</Text>
                     <Input style={styles.input} 
                         blurOnSubmit 
                         autoCapitalize='none' 
